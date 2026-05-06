@@ -78,7 +78,11 @@ img { max-width: 100%; display: block; }
   padding: 14px 22px; border-radius: 999px; font-weight: 700;
 }
 .btn-primary { background: #fff; color: var(--primary-deep); }
-.btn-secondary { background: rgba(255,255,255,0.12); color: white; border: 1px solid rgba(255,255,255,0.18); }
+ .btn-secondary { background: rgba(255,255,255,0.12); color: white; border: 1px solid rgba(255,255,255,0.18); }
+.btn-tertiary { background: var(--soft); color: var(--primary); border: 1px solid rgba(30,94,168,0.12); }
+.link-list { display: grid; gap: 12px; margin-top: 16px; }
+.link-list a { color: var(--primary); font-weight: 700; }
+.notice { padding: 18px 20px; border-radius: 18px; background: #fff8e8; border: 1px solid rgba(180,120,20,0.16); color: #7a5419; }
 .panel-card, .card, .metric, .feature, .timeline-item, .photo-card {
   background: var(--surface-strong); border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow);
 }
