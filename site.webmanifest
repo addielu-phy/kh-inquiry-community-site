@@ -1,0 +1,25 @@
+{
+  "name": "高雄市探究與實作社群",
+  "short_name": "探究實作社群",
+  "description": "高雄市探究與實作社群正式網站，整理社群理念、共備主題、成果活動、公開資源與成員角色。",
+  "lang": "zh-Hant",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#1e5ea8",
+  "icons": [
+    {
+      "src": "assets/site-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/site-icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
