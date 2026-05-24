@@ -251,6 +251,63 @@ main section { padding: 26px 0 34px; }
     color: var(--primary);
   }
 }
+@media print {
+  :root {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface-strong: #ffffff;
+    --ink: #111827;
+    --muted: #374151;
+    --line: #d1d5db;
+  }
+  html { scroll-behavior: auto; }
+  body {
+    background: #ffffff !important;
+    color: var(--ink);
+    font-size: 11pt;
+    line-height: 1.55;
+  }
+  .site-header, .skip-link, .hero-actions, .footer, .btn, .photo-meta {
+    display: none !important;
+  }
+  .container { width: 100%; }
+  .hero, main section { padding: 12pt 0; }
+  .hero-grid, .grid-2, .grid-3, .grid-4, .member-grid, .member-profile, .member-spotlight-grid, .detail-grid, .role-cluster, .photo-wall {
+    display: block;
+  }
+  .hero-panel, .alt-surface, .identity-panel {
+    background: #ffffff !important;
+    color: var(--ink) !important;
+    box-shadow: none;
+  }
+  .panel-card, .card, .metric, .feature, .timeline-item, .photo-card, .callout, .quote {
+    box-shadow: none;
+    border: 1px solid var(--line);
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .photo-card.brand::after { display: none; }
+  .photo-card.brand .photo-copy {
+    position: static;
+    color: var(--ink);
+    background: #ffffff;
+  }
+  .photo-card img, .member-photo img, .identity-photo img {
+    max-height: 72mm;
+    width: auto;
+    object-fit: contain;
+  }
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.86em;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+  }
+  a[href^="#"]::after, a[href^="javascript:"]::after {
+    content: "";
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
