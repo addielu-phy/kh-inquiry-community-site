@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /old/
 
 Sitemap: https://addielu-phy.github.io/kh-inquiry-community-site/sitemap.xml
