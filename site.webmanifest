@@ -1,13 +1,13 @@
 {
   "name": "高雄市探究與實作社群",
   "short_name": "探究共備社群",
-  "description": "高雄市探究與實作社群的公開網站入口，整理社群理念、共備主題、成果活動、資源與成員角色。",
+  "description": "高雄市探究與實作教師社群：跨校共備、活動紀實、共備主題與社群資源。",
   "lang": "zh-Hant-TW",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f4f7fb",
-  "theme_color": "#1e5ea8",
+  "background_color": "#f6f8fb",
+  "theme_color": "#122a4d",
   "icons": [
     {
       "src": "assets/site-icon.svg",
