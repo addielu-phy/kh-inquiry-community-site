@@ -31,7 +31,13 @@
       if (sec.offsetTop <= pos) current = sec.id;
     });
     navLinks.forEach(function (a) {
-      a.classList.toggle("active", a.getAttribute("href") === "#" + current);
+      var isCurrent = a.getAttribute("href") === "#" + current;
+      a.classList.toggle("active", isCurrent);
+      if (isCurrent) {
+        a.setAttribute("aria-current", "location");
+      } else {
+        a.removeAttribute("aria-current");
+      }
     });
   }
   window.addEventListener("scroll", syncNav, { passive: true });
