@@ -3,41 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex" />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#122a4d" />
   <title>找不到頁面｜高雄市探究與實作社群</title>
+  <meta name="description" content="頁面可能已搬移；請回到高雄市探究與實作社群首頁，或直接前往成果與活動、共備主題、社群成員與資源專區。" />
+  <link rel="canonical" href="https://addielu-phy.github.io/kh-inquiry-community-site/404.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:site_name" content="高雄市探究與實作社群" />
+  <meta property="og:title" content="找不到頁面｜高雄市探究與實作社群" />
+  <meta property="og:description" content="頁面可能已搬移；請回到首頁或前往成果與活動、共備主題、社群成員與資源專區。" />
+  <meta property="og:url" content="https://addielu-phy.github.io/kh-inquiry-community-site/404.html" />
+  <meta property="og:image" content="https://addielu-phy.github.io/kh-inquiry-community-site/assets/social/share-card.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="找不到頁面｜高雄市探究與實作社群" />
+  <meta name="twitter:description" content="頁面可能已搬移；請回到首頁或前往成果與活動、共備主題、社群成員與資源專區。" />
+  <meta name="twitter:image" content="https://addielu-phy.github.io/kh-inquiry-community-site/assets/social/share-card.jpg" />
   <link rel="icon" href="assets/site-icon.svg" type="image/svg+xml" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" href="assets/site-icon-180.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "找不到頁面｜高雄市探究與實作社群",
+    "url": "https://addielu-phy.github.io/kh-inquiry-community-site/404.html",
+    "description": "頁面可能已搬移；請回到高雄市探究與實作社群首頁或主要區塊。",
+    "inLanguage": "zh-Hant-TW",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "高雄市探究與實作社群",
+      "url": "https://addielu-phy.github.io/kh-inquiry-community-site/",
+      "inLanguage": "zh-Hant-TW"
+    }
+  }
+  </script>
   <style>
+    :root { color-scheme: dark; --bg:#122a4d; --panel:rgba(255,255,255,.1); --text:#fff; --muted:rgba(255,255,255,.78); --accent:#ffb524; --accent-dark:#0d1f3c; }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: grid;
+      place-items: center;
       font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-      background: #122a4d;
-      color: #fff;
-      text-align: center;
+      background: radial-gradient(circle at 20% 20%, rgba(255,181,36,.18), transparent 32%), linear-gradient(135deg, #122a4d, #071528 78%);
+      color: var(--text);
       padding: 24px;
     }
-    h1 { font-size: 4rem; margin: 0 0 8px; color: #ffb524; font-weight: 900; }
-    p { color: rgba(255,255,255,.8); margin: 0 0 28px; }
-    a {
-      display: inline-block;
-      background: #ffb524;
-      color: #0d1f3c;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 12px 28px;
-      border-radius: 999px;
-    }
+    main { width: min(760px, 100%); }
+    .card { background: var(--panel); border: 1px solid rgba(255,255,255,.18); border-radius: 28px; padding: clamp(28px, 6vw, 52px); box-shadow: 0 24px 70px rgba(0,0,0,.28); }
+    .eyebrow { color: var(--accent); font-weight: 900; letter-spacing: .12em; font-size: .85rem; }
+    h1 { font-size: clamp(3.2rem, 12vw, 6.5rem); line-height: .9; margin: 12px 0; color: var(--accent); font-weight: 900; }
+    h2 { font-size: clamp(1.45rem, 4vw, 2.3rem); margin: 0 0 12px; }
+    p { color: var(--muted); line-height: 1.75; margin: 0 0 22px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    a { color: inherit; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 11px 20px; border-radius: 999px; text-decoration: none; font-weight: 800; border: 1px solid rgba(255,255,255,.22); }
+    .btn-primary { background: var(--accent); color: var(--accent-dark); border-color: var(--accent); }
+    .btn-secondary { background: rgba(255,255,255,.08); color: var(--text); }
+    a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+    @media (max-width: 560px) { .actions { flex-direction: column; } .btn { width: 100%; } }
   </style>
 </head>
 <body>
-  <div>
+  <main class="card" aria-labelledby="page-title">
+    <div class="eyebrow">404｜頁面已搬移或不存在</div>
     <h1>404</h1>
-    <p>這一頁不在我們的課表上，可能已隨新版網站搬家。</p>
-    <a href="./">回到首頁</a>
-  </div>
+    <h2 id="page-title">這一頁不在目前公開網站路徑中</h2>
+    <p>網站已整理為一頁式入口；如果你從舊連結進來，建議先回到首頁，再依需要前往成果與活動、共備主題、社群成員或資源專區。</p>
+    <div class="actions" aria-label="主要返回路徑">
+      <a class="btn btn-primary" href="./">回到首頁</a>
+      <a class="btn btn-secondary" href="./#activities">看成果與活動</a>
+      <a class="btn btn-secondary" href="./#resources">看資源專區</a>
+      <a class="btn btn-secondary" href="./#members">看社群成員</a>
+    </div>
+  </main>
 </body>
 </html>
