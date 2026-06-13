@@ -719,6 +719,129 @@ section.alt { background: var(--surface); }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
 
+@media print {
+  :root {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --ink: #111827;
+    --muted: #374151;
+  }
+
+  html { scroll-behavior: auto; }
+  body {
+    background: #ffffff;
+    color: #111827;
+    font-size: 11.5pt;
+    line-height: 1.55;
+  }
+
+  .skip-link,
+  .site-header,
+  .hero-bg,
+  .hero-actions,
+  .event-thumbs,
+  .event-links,
+  .albums-grid,
+  .footer,
+  .lightbox {
+    display: none !important;
+  }
+
+  section,
+  .hero-inner {
+    padding: 18mm 0 10mm !important;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  .hero {
+    color: #111827;
+  }
+  .hero::before {
+    display: none;
+  }
+  .hero .lead,
+  .stat span,
+  .quote-card small {
+    color: #374151;
+  }
+  .hero-kicker,
+  .event-date,
+  .member-role,
+  .resource-card .tag {
+    border: 1px solid #9ca3af;
+    background: #ffffff;
+    color: #111827;
+  }
+  .hero-stats,
+  .principles,
+  .themes-grid,
+  .members-grid,
+  .resource-list,
+  .about-grid,
+  .event {
+    display: block;
+  }
+
+  .stat,
+  .principle,
+  .theme-card,
+  .member-card,
+  .join-card,
+  .resource-card,
+  .resource-boundary,
+  .quote-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #d1d5db;
+    background: #ffffff !important;
+    color: #111827;
+    margin-bottom: 12pt;
+  }
+  .join-card p,
+  .quote-card p,
+  .member-info p,
+  .resource-card p,
+  .principle p,
+  .theme-card p,
+  .event-body > p {
+    color: #374151;
+  }
+
+  .timeline::before,
+  .event::before {
+    display: none;
+  }
+  .event {
+    padding-left: 0;
+    margin-bottom: 18pt;
+  }
+  .event-media,
+  .member-photo {
+    max-width: 88mm;
+    box-shadow: none;
+    margin-bottom: 8pt;
+  }
+  .event-media img,
+  .member-photo img {
+    position: static;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #4b5563;
+    word-break: break-all;
+  }
+}
+
 /* --------------------------------------------------------------------------
    RWD
    -------------------------------------------------------------------------- */
