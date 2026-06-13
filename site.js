@@ -64,8 +64,10 @@
   if (!lightbox) return;
   var lbImg = document.getElementById("lb-img");
   var lbCaption = document.getElementById("lb-caption");
+  var lbClose = lightbox.querySelector(".lb-close");
   var items = [];
   var index = 0;
+  var lastFocused = null;
 
   // 收集所有可放大的照片（依事件分組順序排列）
   document.querySelectorAll("[data-full]").forEach(function (el) {
@@ -85,21 +87,27 @@
   });
 
   function openAt(i) {
+    lastFocused = document.activeElement;
     index = (i + items.length) % items.length;
     lbImg.src = items[index].full;
     lbImg.alt = items[index].caption;
     lbCaption.textContent = items[index].caption;
     lightbox.classList.add("open");
     document.body.style.overflow = "hidden";
+    if (lbClose) lbClose.focus();
   }
   function close() {
     lightbox.classList.remove("open");
     lbImg.src = "";
     document.body.style.overflow = "";
+    if (lastFocused && typeof lastFocused.focus === "function") {
+      lastFocused.focus();
+    }
+    lastFocused = null;
   }
   function step(d) { openAt(index + d); }
 
-  lightbox.querySelector(".lb-close").addEventListener("click", close);
+  if (lbClose) lbClose.addEventListener("click", close);
   lightbox.querySelector(".lb-prev").addEventListener("click", function (e) { e.stopPropagation(); step(-1); });
   lightbox.querySelector(".lb-next").addEventListener("click", function (e) { e.stopPropagation(); step(1); });
   lightbox.addEventListener("click", function (e) {
