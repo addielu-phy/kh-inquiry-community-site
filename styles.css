@@ -271,6 +271,13 @@ section.alt { background: var(--surface); }
   margin: 0 0 14px;
 }
 .section-head .lead { color: var(--muted); margin: 0; }
+.section-actions { margin: 18px 0 0; }
+.btn-secondary {
+  background: var(--blue-100);
+  color: var(--blue-900);
+  border: 1px solid rgba(33, 81, 143, 0.18);
+}
+.btn-secondary:hover { background: #d6e4f4; }
 
 /* --------------------------------------------------------------------------
    關於社群
