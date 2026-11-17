@@ -469,6 +469,138 @@ section.alt { background: var(--surface); }
 }
 .btn-album:hover { background: var(--blue-600); }
 
+
+/* --------------------------------------------------------------------------
+   即將舉行、場次海報
+   -------------------------------------------------------------------------- */
+.hero-upcoming {
+  margin: -34px 0 40px;
+}
+.hero-upcoming a {
+  color: var(--amber);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 181, 36, 0.5);
+}
+.hero-upcoming a:hover { border-bottom-color: var(--amber); }
+
+.upcoming {
+  display: grid;
+  grid-template-columns: minmax(210px, 280px) 1fr;
+  gap: 40px;
+  align-items: center;
+  background: linear-gradient(180deg, #fffaf0 0%, #ffffff 58%);
+  border: 1px solid rgba(255, 181, 36, 0.45);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 56px;
+}
+.upcoming-body h3 {
+  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+  font-weight: 900;
+  line-height: 1.4;
+  margin: 0 0 12px;
+}
+.upcoming-body > p {
+  color: var(--muted);
+  margin: 0 0 16px;
+  font-size: 0.97rem;
+}
+.upcoming-meta {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+  color: var(--blue-900);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.upcoming-meta li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+.upcoming-meta span {
+  flex: 0 0 3em;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.84rem;
+  letter-spacing: 0.06em;
+}
+
+.poster-frame {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--blue-100);
+  cursor: zoom-in;
+  aspect-ratio: 1 / 1.4142;
+}
+.poster-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #f3efe6;
+  transition: transform 0.4s;
+}
+.poster-frame:hover img { transform: scale(1.02); }
+.poster-frame .event-num { z-index: 1; }
+
+.event-poster {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg);
+}
+.event-poster-thumb {
+  flex: 0 0 68px;
+  width: 68px;
+  border: none;
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  cursor: zoom-in;
+  aspect-ratio: 1 / 1.4142;
+  background: var(--blue-100);
+}
+.event-poster-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.event-poster-thumb:hover img { transform: scale(1.06); }
+.event-poster-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.event-poster-meta strong {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--blue-900);
+}
+.event-poster-meta a {
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.event-poster-meta a:hover { text-decoration: underline; }
+.event-poster-meta .poster-note {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 500;
+}
+
 /* --------------------------------------------------------------------------
    共備主題
    -------------------------------------------------------------------------- */
@@ -749,6 +881,7 @@ section.alt { background: var(--surface); }
   .event-thumbs,
   .event-links,
   .albums-grid,
+  .hero-upcoming,
   .footer,
   .lightbox {
     display: none !important;
@@ -800,7 +933,9 @@ section.alt { background: var(--surface); }
   .join-card,
   .resource-card,
   .resource-boundary,
-  .quote-card {
+  .quote-card,
+  .upcoming,
+  .event-poster {
     break-inside: avoid;
     page-break-inside: avoid;
     box-shadow: none;
@@ -827,13 +962,18 @@ section.alt { background: var(--surface); }
     padding-left: 0;
     margin-bottom: 18pt;
   }
+  .upcoming .event-links { display: flex !important; }
+
   .event-media,
+  .poster-frame,
   .member-photo {
     max-width: 88mm;
     box-shadow: none;
     margin-bottom: 8pt;
   }
   .event-media img,
+  .poster-frame img,
+  .event-poster-thumb img,
   .member-photo img {
     position: static;
     width: 100%;
@@ -889,6 +1029,9 @@ section.alt { background: var(--surface); }
   .event:nth-child(even) .event-media { order: 0; }
   .event:nth-child(even) .event-body { order: 0; }
   .event-thumbs { grid-template-columns: repeat(3, 1fr); }
+
+  .upcoming { grid-template-columns: 1fr; gap: 20px; padding: 22px 20px; }
+  .upcoming .poster-frame { max-width: 280px; }
 
   .resource-list { grid-template-columns: 1fr; }
   .member-card { grid-template-columns: 1fr; }
