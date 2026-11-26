@@ -461,6 +461,33 @@ section.alt { background: var(--surface); }
 .event-links { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; }
 .event-links .count { color: var(--muted); font-size: 0.88rem; }
 
+.event-materials {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.event-materials a {
+  color: var(--blue-700);
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+}
+.event-materials a:hover { text-decoration: underline; }
+.event-materials .material-note {
+  margin-left: 8px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+.event-credit {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
 .btn-album {
   background: var(--blue-700);
   color: #fff;
